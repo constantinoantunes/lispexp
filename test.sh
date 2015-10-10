@@ -2,6 +2,7 @@
 
 MYPATH=`dirname $(readlink -f $0)`
 
+# https://github.com/lehmannro/assert.sh
 . $MYPATH/assert.sh
 
 chmod +x $MYPATH/grep.lisp
