@@ -2,7 +2,7 @@
 
 (if (not (eq (length *args*) 2)) (progn
   (format t "Usage: grep.lisp <regex> <file>")
-  (exit)))
+  (exit 1)))
 
 (let ((regex (nth 0 *args*)) (fh (open (nth 1 *args*))))
   (when fh
