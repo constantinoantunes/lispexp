@@ -1,5 +1,7 @@
 #!/usr/bin/env clisp
 
+(defpackage :com.constantinoantunes.lispexp (:use :common-lisp))
+
 (if (not (eq (length *args*) 2)) (progn
   (format t "Usage: grep.lisp <regex> <file>")
   (exit 1)))
