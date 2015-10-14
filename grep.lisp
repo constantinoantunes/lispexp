@@ -2,6 +2,8 @@
 
 (load "lang.lisp")
 
+(load "lib/unix-opts-20150709.fas")
+
 (defpackage :com.constantinoantunes.lispexp
   (:use :common-lisp :ext)
   (:import-from :com.constantinoantunes.lispexp.lang :foreach))

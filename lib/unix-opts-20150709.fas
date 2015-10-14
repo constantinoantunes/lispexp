@@ -1,0 +1,727 @@
+(|SYSTEM|::|VERSION| '(20080430.))
+#0Y_ #0Y |CHARSET|::|UTF-8|
+#Y(#:|1 41 (DEFPACKAGE :UNIX-OPTS (:NICKNAMES :OPTS) ...)-1-1|
+   #19Y(00 00 00 00 00 00 00 00 20 01 DA DB 01 03 31 F0 3E 19 01)
+   ("UNIX-OPTS" ("OPTS"))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1 41 (DEFPACKAGE :UNIX-OPTS (:NICKNAMES :OPTS) ...)-1-2|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA DB 31 EA 3E 19 01)
+   (("DESCRIBE") "UNIX-OPTS")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1 41 (DEFPACKAGE :UNIX-OPTS (:NICKNAMES :OPTS) ...)-1-3|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA DB 31 EC 3E 19 01)
+   (("COMMON-LISP") "UNIX-OPTS")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1 41 (DEFPACKAGE :UNIX-OPTS (:NICKNAMES :OPTS) ...)-1-4|
+   #19Y(00 00 00 00 00 00 00 00 20 01 DA DB 63 2D 03 02 3E 19 01)
+   (("UNKNOWN-OPTION" "MISSING-ARG" "ARG-PARSER-FAILED" "USE-VALUE"
+     "SKIP-OPTION" "REPARSE-ARG" "OPTION" "RAW-ARG" "DEFINE-OPTS" "ARGV"
+     "GET-OPTS" "DESCRIBE")
+    "UNIX-OPTS" |SYSTEM|::|INTERN-EXPORT|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1 41 (DEFPACKAGE :UNIX-OPTS (:NICKNAMES :OPTS) ...)-1-5|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 D9 19 01) ("UNIX-OPTS")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+#Y(#:|43 43 (IN-PACKAGE #:UNIX-OPTS)-2|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA 31 F6 0F 01 19 01)
+   ("UNIX-OPTS" |COMMON-LISP|::|*PACKAGE*|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|45 73 (DEFCLASS OPTION NIL ...)-3|
+   #132Y(00 00 00 00 00 00 00 00 20 01 6B 00 99 01 DC DD 63 DE DF E0 E1 E2 E3
+         E4 E5 E6 E7 E8 7B 0A DF E9 E1 EA E3 EB E5 EC E7 ED 7B 0A DF EE E1 EF
+         E3 F0 E5 F1 E7 F2 7B 0A DF F3 E1 F4 E3 F5 E5 F6 E7 F7 7B 0A DF 65 1E
+         E1 65 1F E3 65 20 E5 65 21 E7 65 22 7B 0A DF 65 23 E1 65 24 E3 65 25
+         E5 65 26 E7 65 27 7B 0A 7B 06 65 28 B3 E7 65 29 65 2A 65 2B 63 65 2C
+         64 7B 04 33 02 23 37 09 16 01 DC 38 02 32 3A 19 01)
+   (|CLOS|::|<STANDARD-CLASS>| |CLOS|::|ENSURE-CLASS| |UNIX-OPTS|::|OPTION|
+    :|DIRECT-SUPERCLASSES| :|DIRECT-SLOTS| :|NAME| |UNIX-OPTS|::|NAME|
+    :|READERS| (|UNIX-OPTS|::|NAME|) :|WRITERS|
+    ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|NAME|)) :|INITARGS| (:|NAME|)
+    :|DOCUMENTATION|
+    "keyword that will be included in list returned by\n
+`get-opts' function if this option is given by user"
+    |UNIX-OPTS|::|DESCRIPTION| (|UNIX-OPTS|::|DESCRIPTION|)
+    ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|DESCRIPTION|)) (:|DESCRIPTION|)
+    "description of the option" |UNIX-OPTS|::|SHORT| (|UNIX-OPTS|::|SHORT|)
+    ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|SHORT|)) (:|SHORT|)
+    "NIL or single char - short variant of the option" |UNIX-OPTS|::|LONG|
+    (|UNIX-OPTS|::|LONG|) ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|LONG|))
+    (:|LONG|) "NIL or string - long variant of the option"
+    |UNIX-OPTS|::|ARG-PARSER| (|UNIX-OPTS|::|ARG-PARSER|)
+    ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|ARG-PARSER|)) (:|ARG-PARSER|)
+    "if not NIL, this option requires an argument, it will be\n
+parsed with this function"
+    |UNIX-OPTS|::|META-VAR| (|UNIX-OPTS|::|META-VAR|)
+    ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|META-VAR|)) (:|META-VAR|)
+    "if this option requires an argument, this is how it will\n
+be printed in option description"
+    :|METACLASS| "representation of an option"
+    (:|FIXED-SLOT-LOCATIONS| |COMMON-LISP|::|NIL|) :|DIRECT-DEFAULT-INITARGS|
+    :|GENERIC-ACCESSORS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-1|
+   #56Y(00 00 00 00 00 00 00 00 20 01 6B 00 99 01 DC DD DE 7B 01 DF E0 E1 E2 E3
+        E4 E5 7B 06 7B 01 E6 B3 E7 E8 E9 EA 63 EB 64 7B 04 33 02 23 37 09 16 01
+        DC 38 02 32 3A 3E 19 01)
+   (|CLOS|::|<STANDARD-CLASS>| |CLOS|::|ENSURE-CLASS|
+    |UNIX-OPTS|::|TROUBLESOME-OPTION| :|DIRECT-SUPERCLASSES|
+    |COMMON-LISP|::|SIMPLE-ERROR| :|DIRECT-SLOTS| :|NAME| |UNIX-OPTS|::|OPTION|
+    :|READERS| (|UNIX-OPTS|::|OPTION|) :|INITARGS| (:|OPTION|) :|METACLASS|
+    :|DOCUMENTATION|
+    "Generalization over conditions that have to do with some\n
+particular option."
+    (:|FIXED-SLOT-LOCATIONS| |COMMON-LISP|::|NIL|) :|DIRECT-DEFAULT-INITARGS|
+    :|GENERIC-ACCESSORS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-2|
+   #49Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A 64 38 02 72 3A 7B 02 7B 08 2D 03 0B 3E 19
+        01)
+   (|CLOS|::|PRINT-OBJECT| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-2-1|
+       #25Y(00 00 00 00 01 00 00 00 20 02 00 2B 01 7F 02 00 00 AC 6D 00 01 C6
+            5D 19 03)
+       (#Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-2-1-1|
+           #49Y(00 00 00 00 03 00 00 00 20 04 0E 01 1C 16 0E 02 1C 12 AD DE B0
+                6F 05 2D 03 06 9F 19 04 14 AF AF 36 02 19 04 92 03 76 69 00 01
+                AF AF 2D 03 03 19 04)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|*PRINT-ESCAPE*|
+            |COMMON-LISP|::|*PRINT-READABLY*| |CLOS|::|%NO-NEXT-METHOD|
+            #Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-2-1-1-1|
+               #32Y(00 00 00 00 02 00 00 00 21 18 DA B0 38 02 31 95 AF 2F 01 10
+                    02 B1 B3 31 8D 11 AF 2F 03 9E 19 04)
+               ("troublesome option: " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+                |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+                |SYSTEM|::|STREAM-END-S-EXPRESSION|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |UNIX-OPTS|::|OPTION| |COMMON-LISP|::|FORMAT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|NIL|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST|
+    (|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|STREAM|) |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |UNIX-OPTS|::|TROUBLESOME-OPTION| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|75 81 (DEFINE-CONDITION TROUBLESOME-OPTION (SIMPLE-ERROR) ...)-4-3|
+   #13Y(00 00 00 00 00 00 00 00 20 01 C5 19 01)
+   (|UNIX-OPTS|::|TROUBLESOME-OPTION|) |COMMON-LISP|::|NIL|)
+#Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-1|
+   #47Y(00 00 00 00 00 00 00 00 20 01 6B 00 99 01 DC DD DE 7B 01 DF 63 E0 B3 E1
+        E2 E3 E4 63 E5 64 7B 04 33 02 23 37 09 16 01 DC 38 02 32 3A 3E 19 01)
+   (|CLOS|::|<STANDARD-CLASS>| |CLOS|::|ENSURE-CLASS|
+    |UNIX-OPTS|::|UNKNOWN-OPTION| :|DIRECT-SUPERCLASSES|
+    |UNIX-OPTS|::|TROUBLESOME-OPTION| :|DIRECT-SLOTS| :|METACLASS|
+    :|DOCUMENTATION|
+    "This condition is thrown when parser encounters\n
+unknown (not previously defined with `define-opts') option."
+    (:|FIXED-SLOT-LOCATIONS| |COMMON-LISP|::|NIL|) :|DIRECT-DEFAULT-INITARGS|
+    :|GENERIC-ACCESSORS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-2|
+   #49Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A 64 38 02 72 3A 7B 02 7B 08 2D 03 0B 3E 19
+        01)
+   (|CLOS|::|PRINT-OBJECT| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-2-1|
+       #25Y(00 00 00 00 01 00 00 00 20 02 00 2B 01 7F 02 00 00 AC 6D 00 01 C6
+            5D 19 03)
+       (#Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-2-1-1|
+           #49Y(00 00 00 00 03 00 00 00 20 04 0E 01 1C 16 0E 02 1C 12 AD DE B0
+                6F 05 2D 03 06 9F 19 04 14 AF AF 36 02 19 04 92 03 76 69 00 01
+                AF AF 2D 03 03 19 04)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|*PRINT-ESCAPE*|
+            |COMMON-LISP|::|*PRINT-READABLY*| |CLOS|::|%NO-NEXT-METHOD|
+            #Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-2-1-1-1|
+               #32Y(00 00 00 00 02 00 00 00 21 18 DA B0 38 02 31 95 AF 2F 01 10
+                    02 B1 B3 31 8D 11 AF 2F 03 9E 19 04)
+               ("unknown option: " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+                |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+                |SYSTEM|::|STREAM-END-S-EXPRESSION|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |UNIX-OPTS|::|OPTION| |COMMON-LISP|::|FORMAT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|NIL|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST|
+    (|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|STREAM|) |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |UNIX-OPTS|::|UNKNOWN-OPTION| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|83 87 (DEFINE-CONDITION UNKNOWN-OPTION (TROUBLESOME-OPTION) ...)-5-3|
+   #13Y(00 00 00 00 00 00 00 00 20 01 C5 19 01) (|UNIX-OPTS|::|UNKNOWN-OPTION|)
+   |COMMON-LISP|::|NIL|)
+#Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-1|
+   #47Y(00 00 00 00 00 00 00 00 20 01 6B 00 99 01 DC DD DE 7B 01 DF 63 E0 B3 E1
+        E2 E3 E4 63 E5 64 7B 04 33 02 23 37 09 16 01 DC 38 02 32 3A 3E 19 01)
+   (|CLOS|::|<STANDARD-CLASS>| |CLOS|::|ENSURE-CLASS|
+    |UNIX-OPTS|::|MISSING-ARG| :|DIRECT-SUPERCLASSES|
+    |UNIX-OPTS|::|TROUBLESOME-OPTION| :|DIRECT-SLOTS| :|METACLASS|
+    :|DOCUMENTATION|
+    "This condition is thrown when some option OPTION wants\n
+an argument, but there is no such argument given."
+    (:|FIXED-SLOT-LOCATIONS| |COMMON-LISP|::|NIL|) :|DIRECT-DEFAULT-INITARGS|
+    :|GENERIC-ACCESSORS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-2|
+   #49Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A 64 38 02 72 3A 7B 02 7B 08 2D 03 0B 3E 19
+        01)
+   (|CLOS|::|PRINT-OBJECT| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-2-1|
+       #25Y(00 00 00 00 01 00 00 00 20 02 00 2B 01 7F 02 00 00 AC 6D 00 01 C6
+            5D 19 03)
+       (#Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-2-1-1|
+           #49Y(00 00 00 00 03 00 00 00 20 04 0E 01 1C 16 0E 02 1C 12 AD DE B0
+                6F 05 2D 03 06 9F 19 04 14 AF AF 36 02 19 04 92 03 76 69 00 01
+                AF AF 2D 03 03 19 04)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|*PRINT-ESCAPE*|
+            |COMMON-LISP|::|*PRINT-READABLY*| |CLOS|::|%NO-NEXT-METHOD|
+            #Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-2-1-1-1|
+               #32Y(00 00 00 00 02 00 00 00 21 18 DA B0 38 02 31 95 AF 2F 01 10
+                    02 B1 B3 31 8D 11 AF 2F 03 9E 19 04)
+               ("missing arg for option: "
+                |SYSTEM|::|STREAM-START-S-EXPRESSION|
+                |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+                |SYSTEM|::|STREAM-END-S-EXPRESSION|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |UNIX-OPTS|::|OPTION| |COMMON-LISP|::|FORMAT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|NIL|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST|
+    (|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|STREAM|) |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |UNIX-OPTS|::|MISSING-ARG| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|89 93 (DEFINE-CONDITION MISSING-ARG (TROUBLESOME-OPTION) ...)-6-3|
+   #13Y(00 00 00 00 00 00 00 00 20 01 C5 19 01) (|UNIX-OPTS|::|MISSING-ARG|)
+   |COMMON-LISP|::|NIL|)
+#Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-1|
+   #56Y(00 00 00 00 00 00 00 00 20 01 6B 00 99 01 DC DD DE 7B 01 DF E0 E1 E2 E3
+        E4 E5 7B 06 7B 01 E6 B3 E7 E8 E9 EA 63 EB 64 7B 04 33 02 23 37 09 16 01
+        DC 38 02 32 3A 3E 19 01)
+   (|CLOS|::|<STANDARD-CLASS>| |CLOS|::|ENSURE-CLASS|
+    |UNIX-OPTS|::|ARG-PARSER-FAILED| :|DIRECT-SUPERCLASSES|
+    |UNIX-OPTS|::|TROUBLESOME-OPTION| :|DIRECT-SLOTS| :|NAME|
+    |UNIX-OPTS|::|RAW-ARG| :|READERS| (|UNIX-OPTS|::|RAW-ARG|) :|INITARGS|
+    (:|RAW-ARG|) :|METACLASS| :|DOCUMENTATION|
+    "This condition is thrown when some option OPTION wants\n
+an argument, it's given but cannot be parsed by argument parser."
+    (:|FIXED-SLOT-LOCATIONS| |COMMON-LISP|::|NIL|) :|DIRECT-DEFAULT-INITARGS|
+    :|GENERIC-ACCESSORS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-2|
+   #49Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A 64 38 02 72 3A 7B 02 7B 08 2D 03 0B 3E 19
+        01)
+   (|CLOS|::|PRINT-OBJECT| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-2-1|
+       #25Y(00 00 00 00 01 00 00 00 20 02 00 2B 01 7F 02 00 00 AC 6D 00 01 C6
+            5D 19 03)
+       (#Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-2-1-1|
+           #52Y(00 00 00 00 03 00 00 00 20 04 0E 01 1C 19 0E 02 1C 15 AD DE B0
+                6F 05 B1 6F 06 2D 04 07 9F 19 04 14 AF AF 36 02 19 04 92 03 76
+                69 00 01 AF AF 2D 03 03 19 04)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|*PRINT-ESCAPE*|
+            |COMMON-LISP|::|*PRINT-READABLY*| |CLOS|::|%NO-NEXT-METHOD|
+            #Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-2-1-1-1|
+               #55Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 B0 2F 01 10
+                    02 B2 B4 31 8D 11 B0 2F 03 DE B1 38 02 31 95 B0 2F 01 10 02
+                    B1 B4 31 8D 11 B0 2F 03 DF B1 31 94 9E 19 05)
+               ("argument parser failed (option: "
+                |SYSTEM|::|STREAM-START-S-EXPRESSION|
+                |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+                |SYSTEM|::|STREAM-END-S-EXPRESSION| ", string to parse: " #\))
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |UNIX-OPTS|::|OPTION| |UNIX-OPTS|::|RAW-ARG|
+            |COMMON-LISP|::|FORMAT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|NIL|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST|
+    (|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|STREAM|) |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |UNIX-OPTS|::|ARG-PARSER-FAILED| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|95 105 (DEFINE-CONDITION ARG-PARSER-FAILED (TROUBLESOME-OPTION) ...)-7-3|
+   #13Y(00 00 00 00 00 00 00 00 20 01 C5 19 01)
+   (|UNIX-OPTS|::|ARG-PARSER-FAILED|) |COMMON-LISP|::|NIL|)
+#Y(#:|107 108 (DEFPARAMETER *OPTIONS* NIL ...)-8|
+   #26Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 63 31 5A DB DC DD 2D 03 04 C6
+        19 01)
+   ((|COMMON-LISP|::|SPECIAL| |UNIX-OPTS|::|*OPTIONS*|)
+    |UNIX-OPTS|::|*OPTIONS*| |COMMON-LISP|::|VARIABLE|
+    "List of all defined options." |SYSTEM|::|%SET-DOCUMENTATION|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|110 133 (DEFUN ADD-OPTION (&REST ARGS) ...)-9|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|ADD-OPTION| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|ADD-OPTION|
+       #275Y(00 00 00 00 00 00 00 00 27 16 00 2B 06 AE DA 38 01 32 9F 0B 00 00
+             AE DB DC 32 9F 0B 00 01 AE DD 38 01 32 9F 0B 00 02 AE DE 38 01 32
+             9F 0B 00 03 AE DF 38 01 32 9F 0B 00 04 AE E0 E1 32 9F 0B 00 05 06
+             00 02 1C 05 06 00 03 1D 17 68 00 00 AC 8E A8 14 E3 AD AF 6D 0A 01
+             E5 63 E6 2D 06 0D 16 01 1B 69 E2 33 00 1E 16 01 1B 13 16 01 1B 80
+             44 E8 AD AF 6D 0F 01 E5 63 EA 2D 06 0D 16 01 68 00 01 AC 8F 19 6B
+             16 01 68 00 02 93 00 5E AC 8E 2E 5A EB AD AF 6D 12 01 E5 63 ED 2D
+             06 0D 16 01 1B 66 16 01 1B 80 42 EE AD AF 6D 15 01 E5 63 F0 2D 06
+             0D 16 01 68 00 03 93 00 04 AC 8F 19 68 16 01 68 00 04 93 00 5B AC
+             8E 2F 57 F1 AD AF 6D 18 01 E5 63 F3 2D 06 0D 16 01 1B 66 F4 AD AF
+             6D 1B 01 E5 63 EA 2D 06 0D 16 01 68 00 05 AC 8F 19 6B 16 01 F6 DA
+             68 02 00 DB 68 04 01 DD 68 06 02 DE 68 08 03 DF 68 0A 04 E0 68 0C
+             05 6E 0D 1D 0E 1E 5D 0F 1E 19 03)
+       (:|NAME| :|DESCRIPTION| "?" :|SHORT| :|LONG| :|ARG-PARSER| :|META-VAR|
+        "ARG" "at least one form of the option must be provided"
+        |UNIX-OPTS|::|NAME|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-1|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 01 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        1. |COMMON-LISP|::|KEYWORD| |SYSTEM|::|CHECK-TYPE-FAILED|
+        |UNIX-OPTS|::|DESCRIPTION|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-2|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 02 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |COMMON-LISP|::|STRING| |UNIX-OPTS|::|SHORT|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-3|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 03 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|NULL| |COMMON-LISP|::|CHARACTER|)
+        |UNIX-OPTS|::|LONG|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-4|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 04 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|NULL| |COMMON-LISP|::|STRING|)
+        |UNIX-OPTS|::|ARG-PARSER|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-5|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 05 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|NULL| |COMMON-LISP|::|FUNCTION|)
+        |UNIX-OPTS|::|META-VAR|
+        #Y(|UNIX-OPTS|::|ADD-OPTION-6|
+           #16Y(00 00 00 00 01 00 00 00 20 02 9E 0C 00 06 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |UNIX-OPTS|::|OPTION| |CLOS|::|MAKE-INSTANCE| |UNIX-OPTS|::|*OPTIONS*|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|&REST| |UNIX-OPTS|::|ARGS|)
+       "Register an option according to ARGS." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|135 161 (DEFMACRO DEFINE-OPTS (&REST DESCRIPTIONS) ...)-10|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|UNIX-OPTS|::|DEFINE-OPTS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|DEFINE-OPTS|
+       #47Y(00 00 00 00 02 00 00 00 26 03 95 02 DA DB 63 AF 1B 0B 94 00 DC 9E
+            7A 84 02 16 01 83 00 AC 8D 9F 71 16 01 AC 80 B1 00 DD 33 02 23 5D
+            5D 19 04)
+       (|COMMON-LISP|::|PROGN|
+        (|COMMON-LISP|::|SETF| |UNIX-OPTS|::|*OPTIONS*| |COMMON-LISP|::|NIL|)
+        |UNIX-OPTS|::|ADD-OPTION|
+        ((|COMMON-LISP|::|SETF| |UNIX-OPTS|::|*OPTIONS*|
+          (|COMMON-LISP|::|NREVERSE| |UNIX-OPTS|::|*OPTIONS*|))
+         (|COMMON-LISP|::|VALUES|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|)
+       "Define command line options. Arguments of this macro must be plists\n
+containing various parameters. Here we enumerate all allowed parameters:\n\n
+:NAME — keyword that will be included in list returned by GET-OPTS function\n
+if actual option is supplied by user.\n\n
+:DESCRIPTION — description of the option (it will be used in DESCRIBE\n
+function). This argument is optional, but it's recommended to supply it.\n\n
+:SHORT — single character — short variant of the option. You may omit this\n
+argument if you supply :LONG variant of option.\n\n
+:LONG — string, long variant of option. You may omit this argument if you\n
+supply :SHORT variant of option.\n\n
+:ARG-PARSER — if actual option must take an argument, supply this argument,\n
+it must be a function that takes a string and parses it.\n\n
+:META-VAR — if actual option requires an argument, this is how it will be\n
+printed in option description."
+       1)
+    (|COMMON-LISP|::|&REST| |UNIX-OPTS|::|DESCRIPTIONS|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|163 175 (DEFUN ARGV NIL ...)-11|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|ARGV| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|ARGV| #14Y(00 00 00 00 00 00 00 00 26 01 0E 00 19 01)
+       (|EXT|::|ARGV|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+       "Return list of program's arguments, including command used to execute the\n
+program as first elements of the list."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|177 185 (DEFUN SPLIT-SHORT-OPTS (ARG) ...)-12|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|SPLIT-SHORT-OPTS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|SPLIT-SHORT-OPTS|
+       #87Y(00 00 00 00 01 00 00 00 26 02 AD 72 62 DA 91 01 32 12 DB AE DC 71
+            31 91 01 07 09 DB AE DA 71 31 90 01 08 05 AD 61 01 19 02 63 AE DD
+            32 3B 79 1B 1B 94 00 38 02 72 8F DB AD 31 94 AC 01 02 B0 2D 04 04
+            AC 81 90 00 84 02 16 01 83 00 AC 8D 9F 61 16 01 AC 31 B1 19 03)
+       (1. #\- 0. |COMMON-LISP|::|LIST| |SYSTEM|::|DO-FORMAT-CHARACTER|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|ARG|)
+       "Split short options, for example \"-ab\" will produce \"-a\" and\n
+\"-b\". ARG must be a string, return value is list of strings."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|187 197 (DEFUN SPLIT-ON-= (ARG) ...)-13|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|SPLIT-ON-=| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|SPLIT-ON-=|
+       #74Y(00 00 00 00 01 00 00 00 26 02 AD 72 62 DA 91 01 32 12 DB AE DC 71
+            31 91 01 07 09 DD AE DA 71 31 90 01 08 16 AD 61 01 19 02 AE DC AE
+            72 60 AF 96 02 B1 72 62 72 60 61 02 19 03 DD AE 38 06 C9 F9 72 7A
+            92 00 64 AE 61 01 19 03)
+       (1. #\- 0. #\= #.#'|COMMON-LISP|::|CHAR=|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|ARG|)
+       "Split string ARG on \"=\", return value is list of strings." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|199 202 (DEFUN SHORTP (OPT) ...)-14|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|SHORTP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|SHORTP|
+       #31Y(00 00 00 00 01 00 00 00 26 02 AD 72 62 DA 33 01 2F 1F 0A DB AE DC
+            71 31 33 01 07 19 02 19 02)
+       (2. #\- 0.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|UNIX-OPTS|::|OPT|) "Predicate that checks if OPT is a short option."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|204 208 (DEFUN LONGP (OPT) ...)-15|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|LONGP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|LONGP|
+       #41Y(00 00 00 00 01 00 00 00 26 02 AD 72 62 DA 33 01 32 1F 14 DB AE DC
+            71 31 33 01 07 1F 0A DB AE DD 71 31 33 01 07 19 02 19 02)
+       (2. #\- 0. 1.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|UNIX-OPTS|::|OPT|) "Predicate that checks if OPT is a long option." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|210 212 (DEFUN OPTIONP (STR) ...)-16|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|OPTIONP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|OPTIONP|
+       #22Y(00 00 00 00 01 00 00 00 26 02 AD 2F 00 1E 05 AD 2F 01 19 02 19 02)
+       (|UNIX-OPTS|::|SHORTP| |UNIX-OPTS|::|LONGP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|STR|) "This predicate checks if string STR is an option."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|214 217 (DEFUN ARGP (STR) ...)-17|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|ARGP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|ARGP|
+       #23Y(00 00 00 00 01 00 00 00 26 02 AD 32 19 1F 06 AD 2F 00 59 19 02 19
+            02)
+       (|UNIX-OPTS|::|OPTIONP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|STR|) "Check if string STR is an argument (not option)."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|219 232 (DEFUN FIND-OPTION (OPT) ...)-18|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|FIND-OPTION| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|FIND-OPTION|
+       #64Y(00 00 00 00 01 00 00 00 26 02 AD 88 00 26 AD DD 38 01 72 60 C9 5E
+            14 00 2B 01 7F 02 00 00 AC 6D 05 01 AC 6B 06 38 05 A6 F9 72 6B 9D
+            5C 5B 1C 0D 9D 5B 19 07 AD DB 38 01 72 60 C7 1B 58 00 19 07)
+       (|UNIX-OPTS|::|SHORTP| 1. |UNIX-OPTS|::|SHORT| 2. |UNIX-OPTS|::|LONG|
+        #Y(|UNIX-OPTS|::|FIND-OPTION-PREFIX-P|
+           #44Y(00 00 00 00 01 00 00 00 26 02 AD 71 51 AC 72 62 69 00 01 72 62
+                33 01 34 1F 10 AC 69 00 01 38 04 69 00 01 81 62 02 31 35 19 03
+                19 03)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+           (|UNIX-OPTS|::|X|) |COMMON-LISP|::|NIL| 1)
+        |UNIX-OPTS|::|*OPTIONS*|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|OPT|)
+       "Find option OPT and return object that represents it or NIL." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|234 327 (DEFUN GET-OPTS (&OPTIONAL OPTIONS) ...)-19|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|GET-OPTS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|GET-OPTS|
+       #271Y(04 00 02 00 00 00 01 00 26 07 3D 01 00 2B 04 99 00 99 01 92 04 03
+             2E 02 5C 14 73 00 1A 73 00 1A 00 0B 01 00 0B 01 01 0B 01 02 0B 01
+             03 14 93 01 31 9F 2B 01 AC 2C 03 01 0B 00 00 AC 6D 04 01 AD 6D 05
+             01 94 04 06 06 00 1D 04 AC 88 06 25 06 06 00 1C 3C AC 88 15 80 B1
+             AC 84 04 16 04 83 01 92 01 4F 06 02 00 1C 4A 68 02 03 72 64 AD 72
+             64 40 02 19 05 AC A0 34 1B 63 58 67 00 00 01 76 00 AD 36 01 18 04
+             02 19 02 14 A9 34 16 01 1B 80 73 47 07 49 A3 2B 01 00 0B 00 00 4B
+             08 80 55 3E A2 2B 01 E3 E4 E5 AF B3 6D 0C 02 6E 04 0D E3 E8 E5 B0
+             B4 6D 0F 02 6E 04 0D 61 02 0B 00 00 14 6B 10 33 02 23 10 10 0E 11
+             10 11 B2 6D 12 01 B3 BD 6D 13 02 57 14 B0 36 00 16 06 12 02 16 01
+             06 05 00 39 01 00 68 10 00 AD 06 0F 00 34 92 0A FF 99 16 01 1B 10
+             06 05 00 39 00 00 00 0B 0F 00 93 09 03 14 A8 34 4D 16 01 48 1B FF
+             52 AC 9F 34 1B FF 4C)
+       (|UNIX-OPTS|::|SPLIT-SHORT-OPTS| |UNIX-OPTS|::|SPLIT-ON-=|
+        |UNIX-OPTS|::|ARGV|
+        #Y(|UNIX-OPTS|::|GET-OPTS-PUSH-OPTION|
+           #32Y(00 00 00 00 02 00 00 00 26 03 AE 07 01 04 5D 0C 01 04 AD 07 01
+                04 5D 0C 01 04 00 0C 01 01 19 03)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|UNIX-OPTS|::|NAME| |UNIX-OPTS|::|VALUE|) |COMMON-LISP|::|NIL| 1)
+        #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG|
+           #176Y(03 00 02 00 01 00 00 00 26 02 2A 2B 01 7F 02 00 00 9D 2B 01 00
+                 0B 00 00 4B 01 80 85 80 77 80 63 DC DD DE B5 B2 6D 05 02 6E 04
+                 06 DC E1 DE B6 B3 6D 08 02 6E 04 06 DC E3 DE B7 B4 6D 0A 02 6E
+                 04 06 0E 0B 62 03 10 0B A6 2B 01 00 0B 00 00 4B 0C 26 B0 AF 6D
+                 0D 02 B1 6D 0E 01 57 0F B0 36 00 16 06 4D 16 01 11 1B 80 45 58
+                 67 00 00 01 76 00 AD 36 01 18 03 02 19 02 EA EB 69 01 02 EC 68
+                 13 00 33 04 1E 06 06 00 39 01 00 69 01 01 AD 07 00 01 34 16 01
+                 1B 18 06 06 00 39 00 00 00 0C 01 01 1B 0C 06 06 00 39 01 00 AC
+                 28 FF 5F 16 01 4D 19 04)
+           (|COMMON-LISP|::|NIL|
+            #(|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+            :|NAME| |COMMON-LISP|::|USE-VALUE| :|INVOKE-FUNCTION|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-1|
+               #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 00 01 4E 01 02)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |SYSTEM|::|MAKE-RESTART| |UNIX-OPTS|::|SKIP-OPTION|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-2|
+               #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 00 01 4E 01 01)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |UNIX-OPTS|::|REPARSE-ARG|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-3|
+               #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 00 01 4E 01 00)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |SYSTEM|::|*ACTIVE-RESTARTS*| #(|COMMON-LISP|::|NIL|)
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-4|
+               #18Y(00 00 00 00 00 00 00 00 26 01 2A 14 DB 2C 02 02 19 01)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+                #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-4-1|
+                   #17Y(00 00 00 00 01 00 00 00 26 02 9E 0C 00 01 4E 01 00)
+                   (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-ARG-5|
+               #27Y(00 00 00 00 00 00 00 00 26 01 69 04 01 69 04 03 69 02 01 76
+                    01 07 03 01 34 19 01)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+               |COMMON-LISP|::|NIL| 1)
+            (#(|COMMON-LISP|::|ERROR| 94.) 2. . 2.)
+            |UNIX-OPTS|::|ARG-PARSER-FAILED| :|OPTION| :|RAW-ARG|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|UNIX-OPTS|::|ARG|) |COMMON-LISP|::|NIL| 1)
+        #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION|
+           #180Y(04 00 02 00 01 00 00 00 26 02 2A 2B 01 7F 02 00 00 14 6F 01 92
+                 00 80 6E 47 04 80 96 A1 2B 01 00 0B 00 00 4B 05 80 7E 3E A2 2B
+                 01 E0 E1 E2 AF B3 6D 09 02 6E 04 0A E0 E5 E2 B0 B4 6D 0C 02 6E
+                 04 0A 61 02 0B 00 00 14 6B 0D 33 02 23 10 0D 0E 0E 10 0E B2 6D
+                 0F 01 B3 BD 6D 10 02 57 11 B0 36 00 16 06 12 02 16 01 06 05 00
+                 39 01 00 AC 28 FF 9A 16 01 1B 38 AD 2F 03 0C 01 01 06 02 00 0C
+                 01 02 9D 0C 01 03 19 05 14 6F 02 92 00 68 AD 6F 03 64 07 00 01
+                 34 19 05 58 67 00 00 01 76 00 AD 36 01 18 04 02 19 02 06 05 00
+                 39 00 00 00 4D 16 01 48 19 04 19 04)
+           (|COMMON-LISP|::|NIL| |UNIX-OPTS|::|FIND-OPTION|
+            |UNIX-OPTS|::|ARG-PARSER| |UNIX-OPTS|::|NAME| |COMMON-LISP|::|NIL|
+            #(|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) :|NAME|
+            |COMMON-LISP|::|USE-VALUE| :|INVOKE-FUNCTION|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION-1|
+               #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 01 01 4E 01 01)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |SYSTEM|::|MAKE-RESTART| |UNIX-OPTS|::|SKIP-OPTION|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION-2|
+               #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 01 01 4E 01 00)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+            |SYSTEM|::|*ACTIVE-RESTARTS*| |SYSTEM|::|*CONDITION-RESTARTS*|
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION-3|
+               #17Y(00 00 00 00 00 00 00 00 26 01 2A 14 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION-3-1|
+                   #21Y(00 00 00 00 01 00 00 00 26 02 AD 69 00 01 30 01 AD 2F
+                        02 19 02)
+                   (|COMMON-LISP|::|NIL| |SYSTEM|::|ADD-CONDITION-RESTARTS|
+                    |COMMON-LISP|::|SIGNAL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|UNIX-OPTS|::|GET-OPTS-PROCESS-OPTION-4|
+               #18Y(00 00 00 00 00 00 00 00 26 01 DC DD 69 02 01 33 02 1E)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+                |UNIX-OPTS|::|UNKNOWN-OPTION| :|OPTION|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+               |COMMON-LISP|::|NIL| 1)
+            (#(|COMMON-LISP|::|CONDITION| 140.) 3. . 2.))
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|UNIX-OPTS|::|OPT|) |COMMON-LISP|::|NIL| 1)
+        |UNIX-OPTS|::|ARGP| |COMMON-LISP|::|NIL|
+        #(|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) :|NAME|
+        |COMMON-LISP|::|USE-VALUE| :|INVOKE-FUNCTION|
+        #Y(|UNIX-OPTS|::|GET-OPTS-1|
+           #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 01 01 4E 01 01)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |SYSTEM|::|MAKE-RESTART| |UNIX-OPTS|::|SKIP-OPTION|
+        #Y(|UNIX-OPTS|::|GET-OPTS-2|
+           #17Y(00 00 00 00 00 00 00 00 21 16 9E 0C 01 01 4E 01 00)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |SYSTEM|::|*ACTIVE-RESTARTS*| |SYSTEM|::|*CONDITION-RESTARTS*|
+        #Y(|UNIX-OPTS|::|GET-OPTS-3|
+           #17Y(00 00 00 00 00 00 00 00 26 01 2A 14 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|UNIX-OPTS|::|GET-OPTS-3-1|
+               #21Y(00 00 00 00 01 00 00 00 26 02 AD 69 00 01 30 01 AD 2F 02 19
+                    02)
+               (|COMMON-LISP|::|NIL| |SYSTEM|::|ADD-CONDITION-RESTARTS|
+                |COMMON-LISP|::|SIGNAL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|UNIX-OPTS|::|GET-OPTS-4|
+           #18Y(00 00 00 00 00 00 00 00 26 01 DC DD 69 03 02 33 02 1E)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+            |UNIX-OPTS|::|MISSING-ARG| :|OPTION|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|CONDITION| 110.) 3. . 2.) |UNIX-OPTS|::|OPTIONP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|&OPTIONAL| |UNIX-OPTS|::|OPTIONS|)
+       "Parse command line options. If OPTIONS is given, it should be a list to\n
+parse. If it's not given, the function will use `argv' function to get list\n
+of command line arguments. Return two values: list that contains keywords\n
+associated with command line options with `define-opts' macro, and list of\n
+free arguments. If some option requires an argument, you can use `getf' to\n
+test presence of the option and get its argument if the option is present.\n\n
+The parser may signal various conditions, let's list them all specifying\n
+which restarts are available for every condition, and what kind of\n
+information the programmer can extract from the conditions.\n\n
+`unknown-option' is thrown when parser encounters unknown (not previously\n
+defined with `define-opts') option. Use `option' reader to get name of the\n
+option (string). Available restarts: `use-value' (substitute the option and\n
+try again), `skip-option' (ignore the option).\n\n
+`missing-arg' is thrown when some option wants an argument, but there is no\n
+such argument given. Use `option' reader to get name of the\n
+option (string). Available restarts: `use-value' (supplied value will be\n
+used), `skip-option' (ignore the option).\n\n
+`arg-parser-failed' is thrown when some option wants an argument, it's given\n
+but cannot be parsed by argument parser. Use `option' reader to get name of\n
+the option (string) and `raw-arg' to get raw string representing the\n
+argument before parsing. Available restarts: `use-value' (supplied value\n
+will be used), `skip-option' (ignore the option), `reparse-arg' (supplied\n
+string will be parsed instead)."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|329 342 (DEFUN PRINT-OPTS (&OPTIONAL #) ...)-20|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|PRINT-OPTS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|PRINT-OPTS|
+       #173Y(00 00 00 00 00 00 01 00 26 07 3B 01 03 0E 00 F9 6B 01 63 1B 80 8C
+             38 02 72 8F B0 DE 72 52 DF AE 31 94 AD 01 02 AF 2D 04 06 16 01 AC
+             32 90 16 01 1B 80 45 CE 1B 80 4E 38 02 72 8F B2 E2 72 52 E5 AE 38
+             02 31 95 AC AE 31 90 16 01 AC 32 90 16 01 1B 3B 38 02 72 8F B3 E8
+             72 52 E9 AE 31 94 AC AE 31 90 16 01 AC 32 90 16 01 1B 2A 87 01 00
+             AF DC DD AF DE 8E 52 FF 9F CC 14 B0 DE 8F 52 06 B0 E2 8E 52 FF AF
+             CF 14 B1 E2 8E 52 FF AB D1 14 B2 E7 8E 52 FF BE D5 14 73 04 26 AF
+             EB 72 52 2D 04 12 83 01 AD 8D 9F 45 16 02 AD 31 97 19 02)
+       (|COMMON-LISP|::|*STANDARD-OUTPUT*| |UNIX-OPTS|::|*OPTIONS*|
+        #Y(|UNIX-OPTS|::|PRINT-OPTS-1|
+           #36Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 B0 01 02 DB 01
+                03 B6 2D 08 02 AE B1 31 90 B0 31 97 9E 19 05)
+           ("  " 25. |SYSTEM|::|DO-FORMAT-ASCII|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |COMMON-LISP|::|STRING| |UNIX-OPTS|::|SHORT| #\-
+        |SYSTEM|::|DO-FORMAT-CHARACTER| "" |UNIX-OPTS|::|LONG| ", " "" "--" ""
+        |UNIX-OPTS|::|ARG-PARSER| |UNIX-OPTS|::|META-VAR| #\Space ""
+        |UNIX-OPTS|::|DESCRIPTION| |COMMON-LISP|::|FORMAT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|&OPTIONAL|
+        (|COMMON-LISP|::|STREAM| |COMMON-LISP|::|*STANDARD-OUTPUT*|))
+       "Print info about defined options to STREAM. Every option get its own line\n
+with description."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|344 368 (DEFUN PRINT-OPTS* (MARGIN) ...)-21|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|PRINT-OPTS*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|PRINT-OPTS*|
+       #254Y(03 00 01 00 01 00 00 00 26 02 DA AE 73 01 38 DB DB DC 38 01 72 8F
+             53 80 DA 6B 03 63 1B 80 C9 38 02 72 8F AF DF 72 52 E0 AE 31 94 AD
+             01 02 AF 2D 04 07 16 01 AC 32 90 16 01 1B 80 47 CF 1B 80 50 38 02
+             72 8F B1 E3 72 52 E6 AE 38 02 31 95 AC AE 31 90 16 01 AC 32 90 16
+             01 1B 3D 38 02 72 8F B2 E9 72 52 EA AE 31 94 AC AE 31 90 16 01 AC
+             32 90 16 01 1B 2C 87 01 00 38 02 72 8F DE AE DF 8E 52 FF 9D CD 14
+             AF DF 8F 52 06 AF E3 8E 52 FF AD D0 14 B0 E3 8E 52 FF A9 D2 14 B1
+             E8 8E 52 FF BC D6 14 73 04 26 EC AE 38 02 31 95 AC AE 31 90 ED AE
+             31 94 16 01 AC 81 90 00 B3 AD 72 62 82 02 37 07 14 B3 73 01 38 B5
+             91 01 32 16 B1 31 97 DB 1B 06 EA B3 31 90 85 00 AC B8 91 01 34 74
+             16 01 A4 FE AC B2 31 90 16 01 83 01 AD 8D 9F FF 87 16 02 AE 32 90
+             54 67 00 00 00 38 01 32 97 55 19 06)
+       (80. 0. |COMMON-LISP|::|CHARACTER| |UNIX-OPTS|::|*OPTIONS*|
+        |COMMON-LISP|::|STRING| |UNIX-OPTS|::|SHORT| #\-
+        |SYSTEM|::|DO-FORMAT-CHARACTER| "" |UNIX-OPTS|::|LONG| "|" "" "--" ""
+        |UNIX-OPTS|::|ARG-PARSER| |UNIX-OPTS|::|META-VAR| #\Space "" " [" #\])
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|UNIX-OPTS|::|MARGIN|)
+       "Return a string containing info about defined options. All options are\n
+displayed on one line, although this function tries to print it elegantly if\n
+it gets too long. MARGIN specifies margin."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|370 393 (DEFUN DESCRIBE (&KEY PREFIX SUFFIX ...) ...)-22|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|UNIX-OPTS|::|DESCRIBE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|UNIX-OPTS|::|DESCRIBE|
+       #92Y(00 00 00 00 00 00 00 00 A6 1B 05 00 00 00 00 2B 01 3D 06 3D 05 3D
+            04 3D 03 3B 02 02 0E 05 0B 00 00 AC 6D 06 01 B3 9E 34 68 01 00 31
+            97 92 05 14 0E 0B 1D 0B 68 01 00 E6 30 0A 68 01 00 2F 0D B2 9E 34
+            19 08 68 01 00 E1 B3 E2 B5 72 62 73 02 37 6F 09 B4 2D 05 0A 0E 0B
+            1D 65 1B 58)
+       (:|PREFIX| :|SUFFIX| :|USAGE-OF| :|ARGS| :|STREAM|
+        |COMMON-LISP|::|*STANDARD-OUTPUT*|
+        #Y(|UNIX-OPTS|::|DESCRIBE-PRINT-PART|
+           #28Y(00 00 00 00 01 00 00 00 26 02 9E 1F 0D 14 69 00 01 31 90 69 00
+                01 31 97 19 02 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|UNIX-OPTS|::|STR|) |COMMON-LISP|::|NIL| 1)
+        #Y(|UNIX-OPTS|::|DESCRIBE-1|
+           #52Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 AF B1 31 90 AE
+                B1 31 90 9E 5B 1C 0B 83 01 DC B1 38 02 31 95 9E 19 05 DB B1 31
+                94 94 01 83 02 B1 31 90 1B 6A)
+           ("Usage: " #\Space "\n\n")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        7. |UNIX-OPTS|::|PRINT-OPTS*| |COMMON-LISP|::|FORMAT|
+        |UNIX-OPTS|::|*OPTIONS*|
+        #Y(|UNIX-OPTS|::|DESCRIBE-2|
+           #19Y(00 00 00 00 01 00 00 00 21 17 DA AF 38 02 31 95 9E 19 03)
+           ("Available options:\n")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |UNIX-OPTS|::|PRINT-OPTS|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|&KEY| |UNIX-OPTS|::|PREFIX| |UNIX-OPTS|::|SUFFIX|
+        |UNIX-OPTS|::|USAGE-OF| |UNIX-OPTS|::|ARGS|
+        (|COMMON-LISP|::|STREAM| |COMMON-LISP|::|*STANDARD-OUTPUT*|))
+       "Return string describing options of the program that were defined with\n
+`define-opts' macro previously. You can supply PREFIX and SUFFIX arguments\n
+that will be printed before and after options respectively. If USAGE-OF is\n
+supplied, it should be a string, name of the program for \"Usage: \"\n
+section. This section is only printed if this name is given. If your program\n
+takes arguments (apart from options), you can specify how to print them in\n
+\"Usage: \" section with ARGS option (should be a string designator). Output\n
+goes to STREAM."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))

@@ -13,3 +13,5 @@ http://www.clisp.org/impnotes/regexp-mod.html
 http://www.clisp.org/impnotes/quickstart.html
 
 http://www.gigamonkeys.com/book/programming-in-the-large-packages-and-symbols.html
+
+https://github.com/mrkkrp/unix-opts
